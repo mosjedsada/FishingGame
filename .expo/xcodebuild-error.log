@@ -1,8 +1,2 @@
-2025-09-13 16:18:19.316 xcodebuild[6485:4565615]  DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
-2025-09-13 16:18:19.545 xcodebuild[6485:4565520] [MT] DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
-** BUILD FAILED **
-
-
-The following build commands failed:
-	Building workspace FishingGame with scheme FishingGame and configuration Debug
-(1 failure)
+2025-09-13 16:46:45.378 xcodebuild[55359:4785351]  DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+2025-09-13 16:46:45.593 xcodebuild[55359:4785292] [MT] DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.

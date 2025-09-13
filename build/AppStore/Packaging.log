@@ -1,0 +1,441 @@
+2025-09-13 09:42:42 +0000 [MT] Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x1522f9660; archive(resolved)="<IDEArchive: 0x11407fe00>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team(resolved)="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	Chain (15, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x1522f9660; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionProcessingPipelineContext: 0x11772dd60; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x1522f32d0; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x1526a4b70; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x1526a4960; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x152250ae0; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x114091560; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x1138b74e0; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x114092640; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x152677060; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x15268efc0; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x15604f300; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="<IDEProvisioningBasicTeam: 0x1524d61b0; teamID='6XT4R7V83F', teamName='(null)'>">
+	<IDEDistributionContext: 0x156058640; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="(null)">
+	<IDEDistributionContext: 0x150e0a650; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0x150ed44e0>", team="(null)">
+	<IDEDistributionContext: 0x114080220; archive = "<IDEArchive: 0x11407fe00>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0x1522f9660>
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionCreateDestRootStep
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionCopyItemStep
+2025-09-13 09:42:42 +0000 [MT] Running /usr/bin/ditto '-V' '/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app' '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app'
+2025-09-13 09:42:42 +0000  >>> Copying /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app 
+2025-09-13 09:42:42 +0000  copying file ./_CodeSignature/CodeResources ... 
+2025-09-13 09:42:42 +0000  14061 bytes for ./_CodeSignature/CodeResources
+2025-09-13 09:42:42 +0000  copying file ./SplashScreen.storyboardc/EXPO-VIEWCONTROLLER-1-view-EXPO-ContainerView.nib ... 
+2025-09-13 09:42:42 +0000  2143 bytes for ./SplashScreen.storyboardc/EXPO-VIEWCONTROLLER-1-view-EXPO-ContainerView.nib
+2025-09-13 09:42:42 +0000  copying file ./SplashScreen.storyboardc/SplashScreenViewController.nib ... 
+2025-09-13 09:42:42 +0000  1004 bytes for ./SplashScreen.storyboardc/SplashScreenViewController.nib
+2025-09-13 09:42:42 +0000  copying file ./SplashScreen.storyboardc/Info.plist ... 
+2025-09-13 09:42:42 +0000  225 bytes for ./SplashScreen.storyboardc/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./EXUpdates.bundle/app.manifest ... 
+2025-09-13 09:42:42 +0000  276 bytes for ./EXUpdates.bundle/app.manifest
+2025-09-13 09:42:42 +0000  copying file ./EXUpdates.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  762 bytes for ./EXUpdates.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./ReachabilitySwift.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  228 bytes for ./ReachabilitySwift.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./ReachabilitySwift.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  778 bytes for ./ReachabilitySwift.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./FishingGame ... 
+2025-09-13 09:42:42 +0000  3968752 bytes for ./FishingGame
+2025-09-13 09:42:42 +0000  copying file ./ExpoConstants_privacy.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  607 bytes for ./ExpoConstants_privacy.bundle/PrivacyInfo.xcprivacy
+copying file ./ExpoConstants_privacy.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  787 bytes for ./ExpoConstants_privacy.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./React-cxxreact_privacy.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  552 bytes for ./React-cxxreact_privacy.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./React-cxxreact_privacy.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  789 bytes for ./React-cxxreact_privacy.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Assets.car ... 
+2025-09-13 09:42:42 +0000  80335 bytes for ./Assets.car
+2025-09-13 09:42:42 +0000  copying file ./main.jsbundle ... 
+2025-09-13 09:42:42 +0000  1797597 bytes for ./main.jsbundle
+2025-09-13 09:42:42 +0000  copying file ./EXConstants.bundle/app.config ... 
+2025-09-13 09:42:42 +0000  746 bytes for ./EXConstants.bundle/app.config
+2025-09-13 09:42:42 +0000  copying file ./EXConstants.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  765 bytes for ./EXConstants.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  1283 bytes for ./PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./RNSVGFilters.bundle/RNSVGArithmeticFilter.iphoneos.metallib ... 
+2025-09-13 09:42:42 +0000  3993 bytes for ./RNSVGFilters.bundle/RNSVGArithmeticFilter.iphoneos.metallib
+2025-09-13 09:42:42 +0000  copying file ./RNSVGFilters.bundle/RNSVGCompositeXor.iphoneos.metallib ... 
+2025-09-13 09:42:42 +0000  3509 bytes for ./RNSVGFilters.bundle/RNSVGCompositeXor.iphoneos.metallib
+2025-09-13 09:42:42 +0000  copying file ./RNSVGFilters.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  768 bytes for ./RNSVGFilters.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./ExpoFileSystem_privacy.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  877 bytes for ./ExpoFileSystem_privacy.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./ExpoFileSystem_privacy.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  790 bytes for ./ExpoFileSystem_privacy.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/React.framework/_CodeSignature/CodeResources ... 
+2025-09-13 09:42:42 +0000  1798 bytes for ./Frameworks/React.framework/_CodeSignature/CodeResources
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/React.framework/React ... 
+2025-09-13 09:42:42 +0000  11371968 bytes for ./Frameworks/React.framework/React
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/React.framework/Info.plist ... 
+2025-09-13 09:42:42 +0000  749 bytes for ./Frameworks/React.framework/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/ReactNativeDependencies.framework/_CodeSignature/CodeResources ... 
+2025-09-13 09:42:42 +0000  3548 bytes for ./Frameworks/ReactNativeDependencies.framework/_CodeSignature/CodeResources
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_folly.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  552 bytes for ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_folly.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_folly.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  690 bytes for ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_folly.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies ... 
+2025-09-13 09:42:42 +0000  1287280 bytes for ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_glog.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  552 bytes for ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_glog.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_glog.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  688 bytes for ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_glog.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_boost.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  776 bytes for ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_boost.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_boost.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  690 bytes for ./Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_boost.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/ReactNativeDependencies.framework/Info.plist ... 
+2025-09-13 09:42:42 +0000  782 bytes for ./Frameworks/ReactNativeDependencies.framework/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/hermes.framework/_CodeSignature/CodeResources ... 
+2025-09-13 09:42:42 +0000  1798 bytes for ./Frameworks/hermes.framework/_CodeSignature/CodeResources
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/hermes.framework/hermes ... 
+2025-09-13 09:42:42 +0000  4755616 bytes for ./Frameworks/hermes.framework/hermes
+2025-09-13 09:42:42 +0000  copying file ./Frameworks/hermes.framework/Info.plist ... 
+859 bytes for ./Frameworks/hermes.framework/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./embedded.mobileprovision ... 
+2025-09-13 09:42:42 +0000  18796 bytes for ./embedded.mobileprovision
+2025-09-13 09:42:42 +0000  copying file ./assets/assets/sounds/click.mp3 ... 
+2025-09-13 09:42:42 +0000  0 bytes for ./assets/assets/sounds/click.mp3
+2025-09-13 09:42:42 +0000  copying file ./Info.plist ... 
+2025-09-13 09:42:42 +0000  1355 bytes for ./Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Expo.plist ... 
+2025-09-13 09:42:42 +0000  132 bytes for ./Expo.plist
+2025-09-13 09:42:42 +0000  copying file ./RNCAsyncStorage_resources.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  512 bytes for ./RNCAsyncStorage_resources.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./RNCAsyncStorage_resources.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  794 bytes for ./RNCAsyncStorage_resources.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./PkgInfo ... 
+2025-09-13 09:42:42 +0000  8 bytes for ./PkgInfo
+2025-09-13 09:42:42 +0000  copying file ./React-Core_privacy.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  768 bytes for ./React-Core_privacy.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./React-Core_privacy.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  781 bytes for ./React-Core_privacy.bundle/Info.plist
+2025-09-13 09:42:42 +0000 [MT] /usr/bin/ditto exited with 0
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionEmbedProfileStep
+2025-09-13 09:42:42 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0x1524d4600; bundleID='react-native.React', path='<DVTFilePath:0x1522648e0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x15268f9d0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x11531eb70; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='react-native.React', executablePath='<DVTFilePath:0x152283c30:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework/React'>', hardenedRuntime='0'>'>
+2025-09-13 09:42:42 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0x113fd04a0; bundleID='third-party.ReactNativeDependencies', path='<DVTFilePath:0x152285550:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x113189c70; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x11531ace0; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='third-party.ReactNativeDependencies', executablePath='<DVTFilePath:0x152288ab0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies'>', hardenedRuntime='0'>'>
+2025-09-13 09:42:42 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0x1131697f0; bundleID='dev.hermesengine.iphoneos', path='<DVTFilePath:0x140ebbca0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x1524d49a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x115318e70; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='dev.hermesengine.iphoneos', executablePath='<DVTFilePath:0x140ebd100:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework/hermes'>', hardenedRuntime='0'>'>
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionInfoPlistStep
+2025-09-13 09:42:42 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0x1524d4600; bundleID='react-native.React', path='<DVTFilePath:0x1522648e0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x15268f9d0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x115314760; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='react-native.React', executablePath='<DVTFilePath:0x152283c30:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework/React'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2025-09-13 09:42:42 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0x113fd04a0; bundleID='third-party.ReactNativeDependencies', path='<DVTFilePath:0x152285550:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x113189c70; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x115323bc0; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='third-party.ReactNativeDependencies', executablePath='<DVTFilePath:0x152288ab0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2025-09-13 09:42:42 +0000 [MT] Skipping Info.plist step because item: <IDEDistributionItem: 0x1131697f0; bundleID='dev.hermesengine.iphoneos', path='<DVTFilePath:0x140ebbca0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x1524d49a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x11531eea0; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='dev.hermesengine.iphoneos', executablePath='<DVTFilePath:0x140ebd100:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework/hermes'>', hardenedRuntime='0'>'> is a framework or embedded in a framework.
+2025-09-13 09:42:42 +0000 [MT] Skipping setting DTXcodeBuildDistribution because toolsBuildVersionName was nil.
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionItemRemovalStep
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionAppThinningPlistStep
+2025-09-13 09:42:42 +0000 [MT] Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionSymbolsStep
+2025-09-13 09:42:42 +0000 [MT] Writing /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Symbols/B7F6A2C6-E623-389A-B3EC-0C5732164E24.symbols
+2025-09-13 09:42:42 +0000 [MT] Upload Symbols Failed
+2025-09-13 09:42:42 +0000 [MT] Upload Symbols Failed
+2025-09-13 09:42:42 +0000 [MT] Upload Symbols Failed
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionCopyAppleProvidedContentStep
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionAppThinningStep
+2025-09-13 09:42:42 +0000 [MT] Skipping step: IDEDistributionAppThinningStep because it said so
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionArchThinningStep
+2025-09-13 09:42:42 +0000 [MT] Item /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework doesn't have the entitlement com.apple.developer.web-browser-engine.host enabled, returning ["arm64e"]
+2025-09-13 09:42:42 +0000 [MT] Archs to thin for item /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework are ["arm64e"]
+2025-09-13 09:42:42 +0000 [MT] Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/React.framework/React' '-verify_arch' 'arm64e'
+2025-09-13 09:42:42 +0000 [MT] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2025-09-13 09:42:42 +0000 [MT] Skipping architecture thinning for item "React" because arch "arm64e" wasn't found
+2025-09-13 09:42:42 +0000 [MT] Item /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework doesn't have the entitlement com.apple.developer.web-browser-engine.host enabled, returning ["arm64e"]
+2025-09-13 09:42:42 +0000 [MT] Archs to thin for item /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework are ["arm64e"]
+2025-09-13 09:42:42 +0000 [MT] Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies' '-verify_arch' 'arm64e'
+2025-09-13 09:42:42 +0000 [MT] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2025-09-13 09:42:42 +0000 [MT] Skipping architecture thinning for item "ReactNativeDependencies" because arch "arm64e" wasn't found
+2025-09-13 09:42:42 +0000 [MT] Item /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework doesn't have the entitlement com.apple.developer.web-browser-engine.host enabled, returning ["arm64e"]
+2025-09-13 09:42:42 +0000 [MT] Archs to thin for item /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework are ["arm64e"]
+2025-09-13 09:42:42 +0000 [MT] Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/hermes.framework/hermes' '-verify_arch' 'arm64e'
+2025-09-13 09:42:42 +0000 [MT] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2025-09-13 09:42:42 +0000 [MT] Skipping architecture thinning for item "hermes" because arch "arm64e" wasn't found
+2025-09-13 09:42:42 +0000 [MT] Item /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app doesn't have the entitlement com.apple.developer.web-browser-engine.host enabled, returning ["arm64e"]
+2025-09-13 09:42:42 +0000 [MT] Archs to thin for item /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app are ["arm64e"]
+2025-09-13 09:42:42 +0000 [MT] Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/FishingGame' '-verify_arch' 'arm64e'
+2025-09-13 09:42:42 +0000 [MT] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2025-09-13 09:42:42 +0000 [MT] Skipping architecture thinning for item "FishingGame" because arch "arm64e" wasn't found
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionODRStep
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionStripXattrsStep
+2025-09-13 09:42:42 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2025-09-13 09:42:42 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2025-09-13 09:42:42 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2025-09-13 09:42:42 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionCodesignStep
+2025-09-13 09:42:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0x1524d4600; bundleID='react-native.React', path='<DVTFilePath:0x1522648e0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x15268f9d0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x11408a060; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='react-native.React', executablePath='<DVTFilePath:0x152283c30:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework/React'>', hardenedRuntime='0'>'>: {
+}
+2025-09-13 09:42:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2025-09-13 09:42:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0x1524d4600; bundleID='react-native.React', path='<DVTFilePath:0x1522648e0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x15268f9d0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x11409cb90; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='react-native.React', executablePath='<DVTFilePath:0x152283c30:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework/React'>', hardenedRuntime='0'>'> are: {
+}
+2025-09-13 09:42:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x1524d4600; bundleID='react-native.React', path='<DVTFilePath:0x1522648e0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x15268f9d0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x11409cb90; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='react-native.React', executablePath='<DVTFilePath:0x152283c30:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/React.framework/React'>', hardenedRuntime='0'>'> to: /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/entitlements~~~W9d0nS
+2025-09-13 09:42:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0x11409c940; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    578D2171FC85D870322E34D486192D640163BA72,
+    "--entitlements",
+    "/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/entitlements~~~W9d0nS",
+    "--preserve-metadata=identifier,flags,runtime",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/React.framework"
+)'>
+2025-09-13 09:42:42 +0000 [MT] codesign output: /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/React.framework: replacing existing signature
+/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/React.framework: signed bundle with Mach-O thin (arm64) [react-native.React]
+2025-09-13 09:42:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0x113fd04a0; bundleID='third-party.ReactNativeDependencies', path='<DVTFilePath:0x152285550:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x113189c70; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x1524f2920; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='third-party.ReactNativeDependencies', executablePath='<DVTFilePath:0x152288ab0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies'>', hardenedRuntime='0'>'>: {
+}
+2025-09-13 09:42:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2025-09-13 09:42:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0x113fd04a0; bundleID='third-party.ReactNativeDependencies', path='<DVTFilePath:0x152285550:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x113189c70; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x115326890; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='third-party.ReactNativeDependencies', executablePath='<DVTFilePath:0x152288ab0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies'>', hardenedRuntime='0'>'> are: {
+}
+2025-09-13 09:42:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x113fd04a0; bundleID='third-party.ReactNativeDependencies', path='<DVTFilePath:0x152285550:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x113189c70; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x115326890; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='third-party.ReactNativeDependencies', executablePath='<DVTFilePath:0x152288ab0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies'>', hardenedRuntime='0'>'> to: /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/entitlements~~~uxtSSr
+2025-09-13 09:42:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0x1140b3ae0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    578D2171FC85D870322E34D486192D640163BA72,
+    "--entitlements",
+    "/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/entitlements~~~uxtSSr",
+    "--preserve-metadata=identifier,flags,runtime",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework"
+)'>
+2025-09-13 09:42:42 +0000 [MT] codesign output: /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework: replacing existing signature
+/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework: signed bundle with Mach-O thin (arm64) [third-party.ReactNativeDependencies]
+2025-09-13 09:42:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0x1131697f0; bundleID='dev.hermesengine.iphoneos', path='<DVTFilePath:0x140ebbca0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x1524d49a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x1140b9470; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='dev.hermesengine.iphoneos', executablePath='<DVTFilePath:0x140ebd100:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework/hermes'>', hardenedRuntime='0'>'>: {
+}
+2025-09-13 09:42:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2025-09-13 09:42:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0x1131697f0; bundleID='dev.hermesengine.iphoneos', path='<DVTFilePath:0x140ebbca0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x1524d49a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x11532a310; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='dev.hermesengine.iphoneos', executablePath='<DVTFilePath:0x140ebd100:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework/hermes'>', hardenedRuntime='0'>'> are: {
+}
+2025-09-13 09:42:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x1131697f0; bundleID='dev.hermesengine.iphoneos', path='<DVTFilePath:0x140ebbca0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x1524d49a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x152063630; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='(null)', teamID='6XT4R7V83F', identifier='dev.hermesengine.iphoneos', executablePath='<DVTFilePath:0x140ebd100:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/Frameworks/hermes.framework/hermes'>', hardenedRuntime='0'>'> to: /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/entitlements~~~FpD8Be
+2025-09-13 09:42:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0x1520fbb20; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    578D2171FC85D870322E34D486192D640163BA72,
+    "--entitlements",
+    "/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/entitlements~~~FpD8Be",
+    "--preserve-metadata=identifier,flags,runtime",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/hermes.framework"
+)'>
+2025-09-13 09:42:42 +0000 [MT] codesign output: /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/hermes.framework: replacing existing signature
+/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/hermes.framework: signed bundle with Mach-O thin (arm64) [dev.hermesengine.iphoneos]
+2025-09-13 09:42:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0x115405740; bundleID='net.nativemind.mo.fishing', path='<DVTFilePath:0x11407f860:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x15206bd40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x115324ab0; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='{
+    "application-identifier" = "6XT4R7V83F.net.nativemind.mo.fishing";
+    "com.apple.developer.team-identifier" = 6XT4R7V83F;
+    "get-task-allow" = 1;
+}', teamID='6XT4R7V83F', identifier='net.nativemind.mo.fishing', executablePath='<DVTFilePath:0x15226c3e0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/FishingGame'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "6XT4R7V83F.net.nativemind.mo.fishing";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = 6XT4R7V83F;
+    "get-task-allow" = 0;
+}
+2025-09-13 09:42:42 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2025-09-13 09:42:42 +0000 [MT] Entitlements for <IDEDistributionItem: 0x115405740; bundleID='net.nativemind.mo.fishing', path='<DVTFilePath:0x11407f860:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x15206bd40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x1138d93d0; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='{
+    "application-identifier" = "6XT4R7V83F.net.nativemind.mo.fishing";
+    "com.apple.developer.team-identifier" = 6XT4R7V83F;
+    "get-task-allow" = 1;
+}', teamID='6XT4R7V83F', identifier='net.nativemind.mo.fishing', executablePath='<DVTFilePath:0x15226c3e0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/FishingGame'>', hardenedRuntime='0'>'> are: {
+    "application-identifier" = "6XT4R7V83F.net.nativemind.mo.fishing";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = 6XT4R7V83F;
+    "get-task-allow" = 0;
+}
+2025-09-13 09:42:42 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x115405740; bundleID='net.nativemind.mo.fishing', path='<DVTFilePath:0x11407f860:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x15206bd40; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x1138d93d0; name='Apple Development: Anton Dodonov (378X3U2L3Q)', hash='EE242BD7C7FB49D671063054F339EC7A7D35A429', serialNumber='680296D3014692C9155A7A52CFB19707', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2025-04-25 04:11:12 +0000''>', entitlements='{
+    "application-identifier" = "6XT4R7V83F.net.nativemind.mo.fishing";
+    "com.apple.developer.team-identifier" = 6XT4R7V83F;
+    "get-task-allow" = 1;
+}', teamID='6XT4R7V83F', identifier='net.nativemind.mo.fishing', executablePath='<DVTFilePath:0x15226c3e0:'/Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/build/FishingGame.xcarchive/Products/Applications/FishingGame.app/FishingGame'>', hardenedRuntime='0'>'> to: /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/entitlements~~~UfdQOo
+2025-09-13 09:42:42 +0000 [MT] invoking codesign: <NSConcreteTask: 0x1138cd430; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    578D2171FC85D870322E34D486192D640163BA72,
+    "--entitlements",
+    "/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/entitlements~~~UfdQOo",
+    "--preserve-metadata=identifier,flags,runtime",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app"
+)'>
+2025-09-13 09:42:42 +0000 [MT] codesign output: /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app: replacing existing signature
+/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app: signed app bundle with Mach-O thin (arm64) [net.nativemind.mo.fishing]
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionZipODRItemStep
+2025-09-13 09:42:42 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2025-09-13 09:42:42 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2025-09-13 09:42:42 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2025-09-13 09:42:42 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2025-09-13 09:42:42 +0000 [MT] Processing step: IDEDistributionCreateIPAStep
+2025-09-13 09:42:42 +0000 [MT] Running /usr/bin/rsync '-8aPhhE' '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Symbols' '--link-dest' '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq' '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root'
+2025-09-13 09:42:42 +0000  Symbols/
+._Symbols
+            163 170%    4.00MB/s   00:00:00 (xfer#1, to-check=0/4)
+2025-09-13 09:42:42 +0000  Symbols/B7F6A2C6-E623-389A-B3EC-0C5732164E24.symbols
+Symbols/._B7F6A2C6-E623-389A-B3EC-0C5732164E24.symbols
+            163   0%  448.39KB/s   00:00:00 (xfer#2, to-check=2/4)
+2025-09-13 09:42:42 +0000 [MT] /usr/bin/rsync exited with 0
+2025-09-13 09:42:42 +0000 [MT] Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root' '/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Packages/FishingGame.ipa'
+2025-09-13 09:42:42 +0000  >>> Copying /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root 
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/_CodeSignature/CodeResources ... 
+2025-09-13 09:42:42 +0000  14061 bytes for ./Payload/FishingGame.app/_CodeSignature/CodeResources
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/SplashScreen.storyboardc/EXPO-VIEWCONTROLLER-1-view-EXPO-ContainerView.nib ... 
+2025-09-13 09:42:42 +0000  2143 bytes for ./Payload/FishingGame.app/SplashScreen.storyboardc/EXPO-VIEWCONTROLLER-1-view-EXPO-ContainerView.nib
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/SplashScreen.storyboardc/SplashScreenViewController.nib ... 
+2025-09-13 09:42:42 +0000  1004 bytes for ./Payload/FishingGame.app/SplashScreen.storyboardc/SplashScreenViewController.nib
+copying file ./Payload/FishingGame.app/SplashScreen.storyboardc/Info.plist ... 
+2025-09-13 09:42:42 +0000  225 bytes for ./Payload/FishingGame.app/SplashScreen.storyboardc/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/EXUpdates.bundle/app.manifest ... 
+2025-09-13 09:42:42 +0000  276 bytes for ./Payload/FishingGame.app/EXUpdates.bundle/app.manifest
+copying file ./Payload/FishingGame.app/EXUpdates.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  762 bytes for ./Payload/FishingGame.app/EXUpdates.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/ReachabilitySwift.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  228 bytes for ./Payload/FishingGame.app/ReachabilitySwift.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/ReachabilitySwift.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  778 bytes for ./Payload/FishingGame.app/ReachabilitySwift.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/FishingGame ... 
+2025-09-13 09:42:42 +0000  3968832 bytes for ./Payload/FishingGame.app/FishingGame
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/ExpoConstants_privacy.bundle/PrivacyInfo.xcprivacy ... 
+607 bytes for ./Payload/FishingGame.app/ExpoConstants_privacy.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/FishingGame.app/ExpoConstants_privacy.bundle/Info.plist ... 
+787 bytes for ./Payload/FishingGame.app/ExpoConstants_privacy.bundle/Info.plist
+copying file ./Payload/FishingGame.app/React-cxxreact_privacy.bundle/PrivacyInfo.xcprivacy ... 
+552 bytes for ./Payload/FishingGame.app/React-cxxreact_privacy.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/FishingGame.app/React-cxxreact_privacy.bundle/Info.plist ... 
+789 bytes for ./Payload/FishingGame.app/React-cxxreact_privacy.bundle/Info.plist
+copying file ./Payload/FishingGame.app/Assets.car ... 
+2025-09-13 09:42:42 +0000  80335 bytes for ./Payload/FishingGame.app/Assets.car
+copying file ./Payload/FishingGame.app/main.jsbundle ... 
+2025-09-13 09:42:42 +0000  1797597 bytes for ./Payload/FishingGame.app/main.jsbundle
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/EXConstants.bundle/app.config ... 
+2025-09-13 09:42:42 +0000  746 bytes for ./Payload/FishingGame.app/EXConstants.bundle/app.config
+copying file ./Payload/FishingGame.app/EXConstants.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  765 bytes for ./Payload/FishingGame.app/EXConstants.bundle/Info.plist
+copying file ./Payload/FishingGame.app/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  1283 bytes for ./Payload/FishingGame.app/PrivacyInfo.xcprivacy
+copying file ./Payload/FishingGame.app/RNSVGFilters.bundle/RNSVGArithmeticFilter.iphoneos.metallib ... 
+2025-09-13 09:42:42 +0000  3993 bytes for ./Payload/FishingGame.app/RNSVGFilters.bundle/RNSVGArithmeticFilter.iphoneos.metallib
+copying file ./Payload/FishingGame.app/RNSVGFilters.bundle/RNSVGCompositeXor.iphoneos.metallib ... 
+2025-09-13 09:42:42 +0000  3509 bytes for ./Payload/FishingGame.app/RNSVGFilters.bundle/RNSVGCompositeXor.iphoneos.metallib
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/RNSVGFilters.bundle/Info.plist ... 
+768 bytes for ./Payload/FishingGame.app/RNSVGFilters.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/ExpoFileSystem_privacy.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  877 bytes for ./Payload/FishingGame.app/ExpoFileSystem_privacy.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/FishingGame.app/ExpoFileSystem_privacy.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  790 bytes for ./Payload/FishingGame.app/ExpoFileSystem_privacy.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/React.framework/_CodeSignature/CodeResources ... 
+2025-09-13 09:42:42 +0000  1798 bytes for ./Payload/FishingGame.app/Frameworks/React.framework/_CodeSignature/CodeResources
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/React.framework/React ... 
+2025-09-13 09:42:42 +0000  11371984 bytes for ./Payload/FishingGame.app/Frameworks/React.framework/React
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/React.framework/Info.plist ... 
+749 bytes for ./Payload/FishingGame.app/Frameworks/React.framework/Info.plist
+copying file ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/_CodeSignature/CodeResources ... 
+3548 bytes for ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/_CodeSignature/CodeResources
+copying file ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_folly.bundle/PrivacyInfo.xcprivacy ... 
+552 bytes for ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_folly.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_folly.bundle/Info.plist ... 
+690 bytes for ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_folly.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies ... 
+2025-09-13 09:42:42 +0000  1287296 bytes for ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_glog.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  552 bytes for ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_glog.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_glog.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  688 bytes for ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_glog.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_boost.bundle/PrivacyInfo.xcprivacy ... 
+776 bytes for ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_boost.bundle/PrivacyInfo.xcprivacy
+copying file ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_boost.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  690 bytes for ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/ReactNativeDependencies_boost.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/Info.plist ... 
+2025-09-13 09:42:42 +0000  782 bytes for ./Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/hermes.framework/_CodeSignature/CodeResources ... 
+2025-09-13 09:42:42 +0000  1798 bytes for ./Payload/FishingGame.app/Frameworks/hermes.framework/_CodeSignature/CodeResources
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/hermes.framework/hermes ... 
+2025-09-13 09:42:42 +0000  4755632 bytes for ./Payload/FishingGame.app/Frameworks/hermes.framework/hermes
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Frameworks/hermes.framework/Info.plist ... 
+859 bytes for ./Payload/FishingGame.app/Frameworks/hermes.framework/Info.plist
+copying file ./Payload/FishingGame.app/embedded.mobileprovision ... 
+14383 bytes for ./Payload/FishingGame.app/embedded.mobileprovision
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/assets/assets/sounds/click.mp3 ... 
+2025-09-13 09:42:42 +0000  0 bytes for ./Payload/FishingGame.app/assets/assets/sounds/click.mp3
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Info.plist ... 
+2025-09-13 09:42:42 +0000  1355 bytes for ./Payload/FishingGame.app/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/Expo.plist ... 
+2025-09-13 09:42:42 +0000  132 bytes for ./Payload/FishingGame.app/Expo.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/RNCAsyncStorage_resources.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  512 bytes for ./Payload/FishingGame.app/RNCAsyncStorage_resources.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/RNCAsyncStorage_resources.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  794 bytes for ./Payload/FishingGame.app/RNCAsyncStorage_resources.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/PkgInfo ... 
+2025-09-13 09:42:42 +0000  8 bytes for ./Payload/FishingGame.app/PkgInfo
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/React-Core_privacy.bundle/PrivacyInfo.xcprivacy ... 
+2025-09-13 09:42:42 +0000  768 bytes for ./Payload/FishingGame.app/React-Core_privacy.bundle/PrivacyInfo.xcprivacy
+2025-09-13 09:42:42 +0000  copying file ./Payload/FishingGame.app/React-Core_privacy.bundle/Info.plist ... 
+2025-09-13 09:42:42 +0000  781 bytes for ./Payload/FishingGame.app/React-Core_privacy.bundle/Info.plist
+2025-09-13 09:42:42 +0000  copying file ./Symbols/B7F6A2C6-E623-389A-B3EC-0C5732164E24.symbols ... 
+2025-09-13 09:42:43 +0000  10782980 bytes for ./Symbols/B7F6A2C6-E623-389A-B3EC-0C5732164E24.symbols
+2025-09-13 09:42:43 +0000 [MT] /usr/bin/ditto exited with 0
+2025-09-13 09:42:43 +0000 [MT] Processing step: IDEDistributionAppStoreInformationStep
+2025-09-13 09:42:43 +0000 [MT] Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2025-09-13 09:42:43 +0000 [MT] Processing step: IDEDistributionGenerateProcessedDistributionItems
+2025-09-13 09:42:43 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x1138dd760:'/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/ReactNativeDependencies.framework'>
+2025-09-13 09:42:43 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x1138be230:'/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/hermes.framework'>
+2025-09-13 09:42:43 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x150ed4f40:'/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app/Frameworks/React.framework'>
+2025-09-13 09:42:43 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x117609f60:'/var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/XcodeDistPipeline.~~~1MIVvq/Root/Payload/FishingGame.app'>
+2025-09-13 09:42:43 +0000 [MT] Processing step: IDEDistributionCreateManifestStep
+2025-09-13 09:42:43 +0000 [MT] Skipping step: IDEDistributionCreateManifestStep because it said so
