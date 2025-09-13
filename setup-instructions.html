@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎣 Fishing Game - Setup Instructions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            text-align: center;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #FFD700;
+        }
+        .step h3 {
+            color: #FFD700;
+            margin-top: 0;
+        }
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            border: 1px solid #FFC107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .success {
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .qr-placeholder {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .download-link {
+            display: inline-block;
+            background: #FFD700;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        .download-link:hover {
+            background: #FFC107;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎣 เกมตกปลา - คำแนะนำการติดตั้ง</h1>
+        
+        <div class="warning">
+            <strong>⚠️ สำคัญ:</strong> คุณต้องติดตั้ง Node.js และ Expo CLI ก่อนจึงจะสามารถรันเกมได้
+        </div>
+
+        <div class="step">
+            <h3>📥 ขั้นตอนที่ 1: ติดตั้ง Node.js</h3>
+            <p>1. ไปที่ <a href="https://nodejs.org/" target="_blank" style="color: #FFD700;">https://nodejs.org/</a></p>
+            <p>2. ดาวน์โหลด LTS version (แนะนำ)</p>
+            <p>3. รันไฟล์ติดตั้งและทำตามขั้นตอน</p>
+            <p>4. เปิด Command Prompt ใหม่และทดสอบ:</p>
+            <div class="code">node --version<br>npm --version</div>
+        </div>
+
+        <div class="step">
+            <h3>🛠️ ขั้นตอนที่ 2: ติดตั้ง Expo CLI</h3>
+            <p>เปิด Command Prompt (Run as Administrator) และรันคำสั่ง:</p>
+            <div class="code">npm install -g expo-cli</div>
+        </div>
+
+        <div class="step">
+            <h3>📱 ขั้นตอนที่ 3: ติดตั้ง Expo Go บน iPhone</h3>
+            <p>1. เปิด App Store บน iPhone</p>
+            <p>2. ค้นหา "Expo Go"</p>
+            <p>3. ติดตั้งแอป Expo Go</p>
+        </div>
+
+        <div class="step">
+            <h3>🚀 ขั้นตอนที่ 4: รันเกม</h3>
+            <p>1. เปิด Command Prompt และไปที่โฟลเดอร์เกม:</p>
+            <div class="code">cd c:\Users\acer\Documents\MoApp\fishing-game-expo</div>
+            
+            <p>2. ติดตั้ง dependencies:</p>
+            <div class="code">npm install</div>
+            
+            <p>3. รันเกม:</p>
+            <div class="code">expo start</div>
+            
+            <p>4. สแกน QR Code ที่แสดงด้วยแอป Expo Go บน iPhone</p>
+        </div>
+
+        <div class="qr-placeholder">
+            <h3>📱 QR Code จะแสดงที่นี่เมื่อรัน expo start</h3>
+            <p>หลังจากรันคำสั่ง <code>expo start</code> แล้ว QR Code จะปรากฏใน terminal และเบราว์เซอร์</p>
+            <p>ใช้แอป Expo Go สแกน QR Code เพื่อเปิดเกมบน iPhone</p>
+        </div>
+
+        <div class="success">
+            <h3>✅ เมื่อติดตั้งเสร็จแล้ว คุณจะได้:</h3>
+            <ul>
+                <li>🎣 เกมตกปลาแบบเรียลไทม์</li>
+                <li>🐟 ปลา 5 ชนิด + ปลาพิเศษ (มังกรทอง)</li>
+                <li>🏆 ระบบเลเวลและประสบการณ์</li>
+                <li>🏪 ร้านค้าอัพเกรดอุปกรณ์</li>
+                <li>📜 ภารกิจประจำวัน</li>
+                <li>🎵 ระบบเสียง (เปิด/ปิดได้)</li>
+                <li>💾 บันทึกข้อมูลอัตโนมัติ</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🔧 แก้ไขปัญหาที่พบบ่อย</h3>
+            <p><strong>ไม่เห็น QR Code:</strong></p>
+            <ul>
+                <li>ตรวจสอบว่าคอมพิวเตอร์และ iPhone อยู่ใน WiFi เดียวกัน</li>
+                <li>ลองรัน: <code>expo start --tunnel</code></li>
+            </ul>
+            
+            <p><strong>แอปค้างที่หน้าโหลด:</strong></p>
+            <ul>
+                <li>ลองปิดและเปิดแอป Expo Go ใหม่</li>
+                <li>ลองรัน: <code>expo start -c</code> (ลบแคช)</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <p>🎮 <strong>สนุกกับการตกปลา!</strong> 🐟</p>
+        </div>
+    </div>
+</body>
+</html>
