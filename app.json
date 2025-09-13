@@ -17,7 +17,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.antondodonov.fishinggameexpo"
+      "bundleIdentifier": "com.antondodonov.fishinggameexpo",
+      "appleTeamId": "6XT4R7V83F"
     },
     "android": {
       "adaptiveIcon": {

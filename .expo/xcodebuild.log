@@ -1,0 +1,6 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace /Users/anton/proj/FreeDome/FDApplications/frontend/FishingGame/ios/FishingGame.xcworkspace -configuration Debug -scheme FishingGame -destination id=cdc25b48d0f0e2b181b7a87b14dce337b5408a02 DEVELOPMENT_TEAM=6XT4R7V83F -allowProvisioningUpdates -allowProvisioningDeviceRegistration clean build
+
+Build settings from command line:
+    DEVELOPMENT_TEAM = 6XT4R7V83F
+
