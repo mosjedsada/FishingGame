@@ -18,6 +18,8 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.antondodonov.fishinggameexpo",
+      "icon": "./assets/icon.png",
+      "requireFullScreen": true,
       "appleTeamId": "6XT4R7V83F"
     },
     "android": {
