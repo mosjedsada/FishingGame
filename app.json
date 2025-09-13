@@ -1,5 +1,6 @@
 {
   "expo": {
+    "sdkVersion": "54.0.0",
     "name": "Fishing Game",
     "slug": "fishing-game-expo",
     "version": "1.0.0",
