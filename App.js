@@ -13,6 +13,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Audio } from 'expo-av';
 import { StatusBar } from 'expo-status-bar';
+import Shop from './components/Shop';
 
 const { width, height } = Dimensions.get('window');
 
@@ -38,9 +39,12 @@ export default function App() {
   // Game state
   const [score, setScore] = useState(0);
   const [coins, setCoins] = useState(100);
+  const [premiumCoins, setPremiumCoins] = useState(10); // New premium currency
   const [level, setLevel] = useState(1);
   const [exp, setExp] = useState(0);
   const [expToNextLevel, setExpToNextLevel] = useState(100);
+  const [shopVisible, setShopVisible] = useState(false);
+  const [adsRemoved, setAdsRemoved] = useState(false);
   
   // Equipment levels
   const [rodLevel, setRodLevel] = useState(1);
@@ -77,7 +81,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    loadGameState();
+    loadGameData();
     generateDailyMissions();
     startWaterAnimation();
     startSpecialFishTimer();
@@ -89,42 +93,77 @@ export default function App() {
     };
   }, []);
 
-  // Save/Load game state
-  const saveGameState = async () => {
-    try {
-      const gameState = {
-        score,
-        coins,
-        level,
-        exp,
-        rodLevel,
-        baitLevel,
-        lineLevel,
-        dailyMissions,
-        lastSave: new Date().toISOString(),
-      };
-      await AsyncStorage.setItem('fishingGameState', JSON.stringify(gameState));
-    } catch (error) {
-      console.error('Error saving game state:', error);
+  // Handle purchase from shop
+  const handlePurchase = (item) => {
+    if (item.id === 'remove_ads') {
+      // Handle ad removal
+      setAdsRemoved(true);
+      AsyncStorage.setItem('adsRemoved', 'true');
+      Alert.alert(
+        'Success / สำเร็จ', 
+        'Ads have been removed! / ระบบได้ลบโฆษณาออกเรียบร้อยแล้ว!'
+      );
+    } else {
+      // Handle coin purchases
+      setCoins(prevCoins => prevCoins + item.coins);
+      Alert.alert(
+        'Purchase Complete / ซื้อสำเร็จ',
+        `You received ${item.coins} coins! / คุณได้รับ ${item.coins} เหรียญ!`
+      );
     }
   };
 
-  const loadGameState = async () => {
+  // Save game data
+  const saveGameData = async () => {
     try {
-      const savedState = await AsyncStorage.getItem('fishingGameState');
+      const gameData = {
+        score,
+        coins,
+        premiumCoins,
+        level,
+        exp,
+        expToNextLevel,
+        rodLevel,
+        baitLevel,
+        lineLevel,
+        adsRemoved,
+      };
+      await AsyncStorage.setItem('gameData', JSON.stringify(gameData));
+    } catch (error) {
+      console.error('Error saving game data:', error);
+    }
+  };
+
+  const loadGameData = async () => {
+    try {
+      const savedState = await AsyncStorage.getItem('gameData');
       if (savedState) {
         const gameState = JSON.parse(savedState);
         setScore(gameState.score || 0);
         setCoins(gameState.coins || 100);
+        setPremiumCoins(gameState.premiumCoins || 10);
         setLevel(gameState.level || 1);
         setExp(gameState.exp || 0);
+        setExpToNextLevel(gameState.expToNextLevel || 100);
         setRodLevel(gameState.rodLevel || 1);
         setBaitLevel(gameState.baitLevel || 1);
         setLineLevel(gameState.lineLevel || 1);
-        setDailyMissions(gameState.dailyMissions || []);
+        setAdsRemoved(gameState.adsRemoved || false);
       }
     } catch (error) {
-      console.error('Error loading game state:', error);
+      console.error('Error loading game data:', error);
+    }
+  };
+
+  // Load premium status
+  const loadPremiumStatus = async () => {
+    try {
+      const status = await AsyncStorage.getItem('adsRemoved');
+      if (status === 'true') {
+        setAdsRemoved(true);
+      }
+    } catch (error) {
+      console.error('Error loading premium status:', error);
     }
   };
 
@@ -307,7 +346,7 @@ export default function App() {
         Alert.alert('เลื่อนระดับ!', `ยินดีด้วย! คุณได้เลื่อนเป็นระดับ ${level + 1}`);
       }
       
-      saveGameState();
+      saveGameData();
     }, waitTime);
   };
 
@@ -344,12 +383,26 @@ export default function App() {
         }
         break;
     }
-    saveGameState();
+    saveGameData();
   };
 
   return (
     <View style={styles.container}>
-      <StatusBar style="light" />
+      <StatusBar style="auto" />
+      <View style={styles.currencyContainer}>
+        <View style={styles.currencyBox}>
+          <Text style={styles.currencyText}>Coins: {coins}</Text>
+        </View>
+        <View style={styles.currencyBox}>
+          <Text style={styles.premiumText}>Premium: {premiumCoins} 💎</Text>
+        </View>
+        <TouchableOpacity 
+          style={styles.shopButton}
+          onPress={() => setShopVisible(true)}
+        >
+          <Text style={styles.shopButtonText}>Shop / ร้านค้า</Text>
+        </TouchableOpacity>
+      </View>
       
       {/* Background */}
       <Animated.View style={[styles.water, {
@@ -515,6 +568,16 @@ export default function App() {
           </View>
         </View>
       </Modal>
+      <Shop 
+        isVisible={showShop} 
+        onClose={() => setShowShop(false)}
+        onPurchase={handlePurchase}
+      />
+      <Shop 
+        isVisible={shopVisible} 
+        onClose={() => setShopVisible(false)}
+        onPurchase={handlePurchase}
+      />
     </View>
   );
 }
@@ -523,7 +586,123 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#87CEEB',
+    paddingTop: 40,
   },
+  currencyContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 10,
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    borderRadius: 10,
+    margin: 10,
+  },
+  currencyBox: {
+    backgroundColor: 'rgba(255,255,255,0.8)',
+    padding: 8,
+    borderRadius: 5,
+    minWidth: 100,
+    alignItems: 'center',
+  },
+  currencyText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  premiumText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FFD700',
+  },
+  shopButton: {
+    backgroundColor: '#4CAF50',
+    padding: 8,
+    borderRadius: 5,
+    minWidth: 100,
+    alignItems: 'center',
+  },
+  shopButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+    paddingTop: 40,
+  },
+  currencyContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 10,
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    borderRadius: 10,
+    margin: 10,
+  },
+  currencyBox: {
+    backgroundColor: 'rgba(255,255,255,0.8)',
+    padding: 8,
+    borderRadius: 5,
+    minWidth: 100,
+    alignItems: 'center',
+  },
+  currencyText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  premiumText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FFD700',
+  },
+  shopButton: {
+    backgroundColor: '#4CAF50',
+    padding: 8,
+    borderRadius: 5,
+    minWidth: 100,
+    alignItems: 'center',
+  },
+  shopButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  // Add the handlePurchase function before the return statement
+  const handlePurchase = (item) => {
+    if (item.id === 'remove_ads') {
+      // Handle ad removal
+      setAdsRemoved(true);
+      AsyncStorage.setItem('adsRemoved', 'true');
+      Alert.alert(
+        'Success / สำเร็จ', 
+        'Ads have been removed! / ระบบได้ลบโฆษณาออกเรียบร้อยแล้ว!'
+      );
+    } else {
+      // Handle coin purchases
+      setCoins(prevCoins => prevCoins + item.coins);
+      Alert.alert(
+        'Purchase Complete / ซื้อสำเร็จ',
+        `You received ${item.coins} coins! / คุณได้รับ ${item.coins} เหรียญ!`
+      );
+    }
+  };
+
+  // Add the shop button to the UI
+  const renderShopButton = () => (
+    <TouchableOpacity 
+      style={styles.shopButton}
+      onPress={() => setShowShop(true)}
+    >
+      <Text style={styles.shopButtonText}>Shop / ร้านค้า</Text>
+    </TouchableOpacity>
+  );
+
+  // Add currency display to the UI
+  const renderCurrencyDisplay = () => (
+    <View style={styles.currencyContainer}>
+      <View style={styles.currencyBox}>
+        <Text style={styles.currencyText}>Coins: {coins}</Text>
+      </View>
+      <View style={styles.currencyBox}>
+        <Text style={styles.premiumText}>Premium: {premiumCoins} 💎</Text>
+      </View>
+      {renderShopButton()}
+    </View>
+  );
+
   water: {
     position: 'absolute',
     top: height * 0.4,
