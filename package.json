@@ -10,15 +10,25 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-community/netinfo": "^11.4.1",
+    "axios": "^1.12.2",
     "expo": "~54.0.6",
     "expo-av": "~16.0.7",
     "expo-constants": "~18.0.8",
+    "expo-dev-client": "~6.0.12",
     "expo-status-bar": "~3.0.8",
     "expo-updates": "~29.0.10",
     "react": "^19.1.0",
     "react-native": "0.81.4",
+    "react-native-config": "^1.5.9",
+    "react-native-device-info": "^14.1.1",
+    "react-native-encrypted-storage": "^4.0.3",
+    "react-native-freedome": "^0.1.0",
+    "react-native-keychain": "^10.0.0",
+    "react-native-magento": "^2.0.0",
+    "react-native-netinfo": "^1.1.0",
     "react-native-svg": "^15.12.1",
-    "expo-dev-client": "~6.0.12"
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",

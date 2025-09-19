@@ -1,2 +1,9 @@
-2025-09-13 16:46:45.378 xcodebuild[55359:4785351]  DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
-2025-09-13 16:46:45.593 xcodebuild[55359:4785292] [MT] DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+2025-09-14 21:03:26.783 xcodebuild[99126:9986507]  DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+2025-09-14 21:03:27.103 xcodebuild[99126:9986432] [MT] DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+2025-09-14 21:04:27.527 xcodebuild[99126:9986432] Writing error result bundle to /var/folders/5t/4wcdq9g15dv3012__mj_0hb80000gn/T/ResultBundle_2025-14-09_21-04-0027.xcresult
+xcodebuild: error: Timed out waiting for all destinations matching the provided destination specifier to become available
+
+
+	Available destinations for the "FishingGame" scheme:
+		{ platform:iOS, arch:arm64, id:00008130-000264581442001C, name:Dodonova, error:Browsing on the local area network for Dodonova, which has previously reported preparation errors Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.
+The device must be opted into Developer Mode to connect wirelessly. }

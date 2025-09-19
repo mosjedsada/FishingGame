@@ -13,7 +13,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Audio } from 'expo-av';
 import { StatusBar } from 'expo-status-bar';
-import Shop from './components/Shop';
+import MagentoShop from './components/MagentoShop';
 
 const { width, height } = Dimensions.get('window');
 
@@ -60,6 +60,7 @@ export default function App() {
   const [showShop, setShowShop] = useState(false);
   const [showMissions, setShowMissions] = useState(false);
   const [showSpecialFish, setShowSpecialFish] = useState(false);
+  const [showMagentoShop, setShowMagentoShop] = useState(false);
   const [isSoundOn, setIsSoundOn] = useState(true);
   
   // Daily missions
@@ -480,6 +481,10 @@ export default function App() {
           <Text style={styles.controlButtonText}>🛒</Text>
         </TouchableOpacity>
         
+        <TouchableOpacity style={styles.controlButton} onPress={() => setShowMagentoShop(true)}>
+          <Text style={styles.controlButtonText}>🏪</Text>
+        </TouchableOpacity>
+        
         <TouchableOpacity style={styles.controlButton} onPress={() => setShowMissions(true)}>
           <Text style={styles.controlButtonText}>📜</Text>
         </TouchableOpacity>
@@ -568,15 +573,21 @@ export default function App() {
           </View>
         </View>
       </Modal>
-      <Shop 
-        isVisible={showShop} 
-        onClose={() => setShowShop(false)}
-        onPurchase={handlePurchase}
-      />
-      <Shop 
-        isVisible={shopVisible} 
-        onClose={() => setShopVisible(false)}
-        onPurchase={handlePurchase}
+      
+      {/* Magento Shop */}
+      <MagentoShop
+        visible={showMagentoShop}
+        onClose={() => setShowMagentoShop(false)}
+        playerLevel={level}
+        gameCoins={coins}
+        onPurchase={(product) => {
+          // Handle successful purchase - could give in-game bonuses
+          console.log('Purchased:', product.name);
+          Alert.alert(
+            'Purchase Successful!',
+            `You bought ${product.name}! This might improve your fishing luck!`
+          );
+        }}
       />
     </View>
   );
@@ -623,86 +634,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
-    paddingTop: 40,
-  },
-  currencyContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 10,
-    backgroundColor: 'rgba(0,0,0,0.2)',
-    borderRadius: 10,
-    margin: 10,
-  },
-  currencyBox: {
-    backgroundColor: 'rgba(255,255,255,0.8)',
-    padding: 8,
-    borderRadius: 5,
-    minWidth: 100,
-    alignItems: 'center',
-  },
-  currencyText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  premiumText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#FFD700',
-  },
-  shopButton: {
-    backgroundColor: '#4CAF50',
-    padding: 8,
-    borderRadius: 5,
-    minWidth: 100,
-    alignItems: 'center',
-  },
-  shopButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-  },
-  // Add the handlePurchase function before the return statement
-  const handlePurchase = (item) => {
-    if (item.id === 'remove_ads') {
-      // Handle ad removal
-      setAdsRemoved(true);
-      AsyncStorage.setItem('adsRemoved', 'true');
-      Alert.alert(
-        'Success / สำเร็จ', 
-        'Ads have been removed! / ระบบได้ลบโฆษณาออกเรียบร้อยแล้ว!'
-      );
-    } else {
-      // Handle coin purchases
-      setCoins(prevCoins => prevCoins + item.coins);
-      Alert.alert(
-        'Purchase Complete / ซื้อสำเร็จ',
-        `You received ${item.coins} coins! / คุณได้รับ ${item.coins} เหรียญ!`
-      );
-    }
-  };
-
-  // Add the shop button to the UI
-  const renderShopButton = () => (
-    <TouchableOpacity 
-      style={styles.shopButton}
-      onPress={() => setShowShop(true)}
-    >
-      <Text style={styles.shopButtonText}>Shop / ร้านค้า</Text>
-    </TouchableOpacity>
-  );
-
-  // Add currency display to the UI
-  const renderCurrencyDisplay = () => (
-    <View style={styles.currencyContainer}>
-      <View style={styles.currencyBox}>
-        <Text style={styles.currencyText}>Coins: {coins}</Text>
-      </View>
-      <View style={styles.currencyBox}>
-        <Text style={styles.premiumText}>Premium: {premiumCoins} 💎</Text>
-      </View>
-      {renderShopButton()}
-    </View>
-  );
-
   water: {
     position: 'absolute',
     top: height * 0.4,
