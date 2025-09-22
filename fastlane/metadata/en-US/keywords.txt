@@ -1,1 +1,1 @@
-fishing,game,adventure,ocean,lake,fish,catch,level up,RPG,simulation,water,sports,relaxing,fun,free
+fishing,game,adventure,ocean,fish,catch,RPG,simulation

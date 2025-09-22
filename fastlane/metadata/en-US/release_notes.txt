@@ -1,6 +1,6 @@
-🎣 Welcome to Fishing Game!
+Welcome to Fishing Game!
 
-🌟 NEW FEATURES:
+NEW FEATURES:
 • 6 Unique Fishing Locations
 • Level-based Progression System
 • Special Fish Collection
@@ -9,7 +9,7 @@
 • Beautiful Underwater Graphics
 • Realistic Sound Effects
 
-🏞️ LOCATIONS:
+LOCATIONS:
 • Beginner Lake - Perfect for new anglers
 • Forest River - Discover rare fish
 • Ocean Shore - Face big ocean fish
@@ -17,7 +17,7 @@
 • Deep Ocean - Ancient sea creatures
 • Arctic Sea - Brave frozen waters
 
-🎮 GAMEPLAY:
+GAMEPLAY:
 • Cast your line with precision
 • Wait for the perfect moment
 • Catch different fish species

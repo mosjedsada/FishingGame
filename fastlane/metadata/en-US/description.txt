@@ -1,8 +1,8 @@
-🎣 Welcome to the ultimate fishing adventure! 
+Welcome to the ultimate fishing adventure! 
 
 Dive into the world of Fishing Game and experience the thrill of catching fish in multiple stunning locations. From peaceful lakes to deep ocean waters, each location offers unique challenges and rewards.
 
-🌟 FEATURES:
+FEATURES:
 • 6 Unique Fishing Locations - From beginner lakes to arctic seas
 • Level-based Progression - Unlock new locations as you level up
 • Special Fish Collection - Catch rare and legendary fish
@@ -12,7 +12,7 @@ Dive into the world of Fishing Game and experience the thrill of catching fish i
 • Shop System - Purchase equipment and upgrades
 • Sound Effects - Realistic fishing sounds
 
-🏞️ LOCATIONS:
+LOCATIONS:
 • Beginner Lake - Perfect for new anglers
 • Forest River - Discover rare fish in the wilderness
 • Ocean Shore - Face the challenge of big ocean fish
@@ -20,7 +20,7 @@ Dive into the world of Fishing Game and experience the thrill of catching fish i
 • Deep Ocean - Encounter ancient sea creatures
 • Arctic Sea - Brave the frozen waters
 
-🎮 GAMEPLAY:
+GAMEPLAY:
 • Cast your line with precision
 • Wait for the perfect moment to reel in
 • Catch different fish species
