@@ -4,7 +4,7 @@
 # `fastlane docs`
 
 # The bundle identifier of your app
-app_identifier("net.nativemind.fishinggame") # Replace with your actual bundle identifier
+app_identifier("com.yourcompany.fishinggame") # Replace with your actual bundle identifier
 
 # The name of your app
 # app_name("Fishing Game")

@@ -28,7 +28,7 @@ platform :ios do
       export_method: "app-store",
       export_options: {
         method: "app-store",
-        teamID: "6XT4R7V83F", # Replace with your Apple Team ID
+        teamID: "YOUR_TEAM_ID", # Replace with your Apple Team ID
         uploadBitcode: false,
         uploadSymbols: true,
         compileBitcode: false
@@ -78,7 +78,7 @@ platform :ios do
       export_method: "app-store",
       export_options: {
         method: "app-store",
-        teamID: "6XT4R7V83F", # Replace with your Apple Team ID
+        teamID: "YOUR_TEAM_ID", # Replace with your Apple Team ID
         uploadBitcode: false,
         uploadSymbols: true,
         compileBitcode: false
