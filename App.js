@@ -14,6 +14,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Audio } from 'expo-av';
 import { StatusBar } from 'expo-status-bar';
 import MagentoShop from './components/MagentoShop';
+import FishingRodShop from './components/FishingRodShop';
+import CastingMechanism from './components/CastingMechanism';
 
 const { width, height } = Dimensions.get('window');
 
@@ -61,7 +63,14 @@ export default function App() {
   const [showMissions, setShowMissions] = useState(false);
   const [showSpecialFish, setShowSpecialFish] = useState(false);
   const [showMagentoShop, setShowMagentoShop] = useState(false);
+  const [showFishingRodShop, setShowFishingRodShop] = useState(false);
+  const [showCasting, setShowCasting] = useState(false);
   const [isSoundOn, setIsSoundOn] = useState(true);
+  
+  // Fishing rod state
+  const [currentRod, setCurrentRod] = useState(null);
+  const [ownedRods, setOwnedRods] = useState([]);
+  const [castResult, setCastResult] = useState(null);
   
   // Daily missions
   const [dailyMissions, setDailyMissions] = useState([]);
@@ -83,6 +92,7 @@ export default function App() {
 
   useEffect(() => {
     loadGameData();
+    loadFishingRods();
     generateDailyMissions();
     startWaterAnimation();
     startSpecialFishTimer();
@@ -165,6 +175,76 @@ export default function App() {
       }
     } catch (error) {
       console.error('Error loading premium status:', error);
+    }
+  };
+
+  // Load fishing rods
+  const loadFishingRods = async () => {
+    try {
+      const savedRods = await AsyncStorage.getItem('fishingRods');
+      if (savedRods) {
+        const rodData = JSON.parse(savedRods);
+        setOwnedRods(rodData);
+        const equippedRod = rodData.find(rod => rod.equipped);
+        if (equippedRod) {
+          setCurrentRod(equippedRod);
+        }
+      } else {
+        // Initialize with basic rod
+        const basicRod = {
+          id: 'basic_rod',
+          name: 'เบ็ดพื้นฐาน / Basic Rod',
+          castingDistance: 50,
+          accuracy: 70,
+          durability: 100,
+          owned: true,
+          equipped: true,
+        };
+        setCurrentRod(basicRod);
+        setOwnedRods([basicRod]);
+        await AsyncStorage.setItem('fishingRods', JSON.stringify([basicRod]));
+      }
+    } catch (error) {
+      console.error('Error loading fishing rods:', error);
+    }
+  };
+
+  // Handle rod purchase
+  const handleRodPurchase = (rod) => {
+    if (coins >= rod.price) {
+      setCoins(prev => prev - rod.price);
+      const updatedRods = [...ownedRods];
+      const rodIndex = updatedRods.findIndex(r => r.id === rod.id);
+      if (rodIndex >= 0) {
+        updatedRods[rodIndex] = { ...updatedRods[rodIndex], owned: true };
+      } else {
+        updatedRods.push({ ...rod, owned: true });
+      }
+      setOwnedRods(updatedRods);
+      AsyncStorage.setItem('fishingRods', JSON.stringify(updatedRods));
+      saveGameData();
+    }
+  };
+
+  // Handle rod equip
+  const handleRodEquip = (rod) => {
+    const updatedRods = ownedRods.map(r => ({
+      ...r,
+      equipped: r.id === rod.id
+    }));
+    setOwnedRods(updatedRods);
+    setCurrentRod(rod);
+    AsyncStorage.setItem('fishingRods', JSON.stringify(updatedRods));
+  };
+
+  // Handle casting
+  const handleCast = (result) => {
+    setCastResult(result);
+    // Apply rod bonuses to fishing
+    if (result.accuracy) {
+      // Increase fish catch rate based on rod accuracy
+      const accuracyBonus = result.accuracy ? currentRod.accuracy / 100 : 0;
+      // This will be used in the fishing logic
     }
   };
 
@@ -299,6 +379,12 @@ export default function App() {
       return;
     }
 
+    // If no cast result, show casting interface
+    if (!castResult) {
+      setShowCasting(true);
+      return;
+    }
+
     playSound('cast');
     checkMissions('play_count');
     
@@ -307,8 +393,10 @@ export default function App() {
     setCaughtFish(null);
     startHookAnimation();
     
-    // Wait time based on line level
-    const waitTime = Math.max(1000, 3000 - (lineLevel * 500));
+    // Wait time based on line level and rod accuracy
+    const baseWaitTime = Math.max(1000, 3000 - (lineLevel * 500));
+    const rodAccuracyBonus = currentRod ? currentRod.accuracy / 100 : 1;
+    const waitTime = Math.max(1000, baseWaitTime * rodAccuracyBonus);
     
     setTimeout(() => {
       setIsWaiting(false);
@@ -423,9 +511,14 @@ export default function App() {
       
       {/* Equipment Info */}
       <View style={styles.equipmentInfo}>
-        <Text style={styles.equipText}>เบ็ด: ระดับ {rodLevel}</Text>
+        <Text style={styles.equipText}>เบ็ด: {currentRod?.name || 'No Rod'}</Text>
         <Text style={styles.equipText}>เหยื่อ: ระดับ {baitLevel}</Text>
         <Text style={styles.equipText}>สายเบ็ด: ระดับ {lineLevel}</Text>
+        {castResult && (
+          <Text style={styles.castInfo}>
+            Cast: {castResult.distance}m / โยน: {castResult.distance} เมตร
+          </Text>
+        )}
       </View>
       
       {/* Fishing Line */}
@@ -467,7 +560,8 @@ export default function App() {
       {/* Fishing Button */}
       <TouchableOpacity style={styles.fishingButton} onPress={startFishing}>
         <Text style={styles.buttonText}>
-          {isFishing ? (isWaiting ? 'รอปลา...' : 'ดึงเบ็ด!') : 'ทอดเบ็ด!'}
+          {isFishing ? (isWaiting ? 'รอปลา...' : 'ดึงเบ็ด!') : 
+           castResult ? 'ทอดเบ็ด!' : 'โยนเบ็ด!'}
         </Text>
       </TouchableOpacity>
       
@@ -483,6 +577,10 @@ export default function App() {
         
         <TouchableOpacity style={styles.controlButton} onPress={() => setShowMagentoShop(true)}>
           <Text style={styles.controlButtonText}>🏪</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.controlButton} onPress={() => setShowFishingRodShop(true)}>
+          <Text style={styles.controlButtonText}>🎣</Text>
         </TouchableOpacity>
         
         <TouchableOpacity style={styles.controlButton} onPress={() => setShowMissions(true)}>
@@ -589,6 +687,25 @@ export default function App() {
           );
         }}
       />
+      
+      {/* Fishing Rod Shop */}
+      <FishingRodShop
+        visible={showFishingRodShop}
+        onClose={() => setShowFishingRodShop(false)}
+        playerCoins={coins}
+        onPurchase={handleRodPurchase}
+        onEquip={handleRodEquip}
+      />
+      
+      {/* Casting Mechanism */}
+      <CastingMechanism
+        visible={showCasting}
+        onClose={() => setShowCasting(false)}
+        onCast={handleCast}
+        currentRod={currentRod}
+        isFishing={isFishing}
+        onStartFishing={startFishing}
+      />
     </View>
   );
 }
@@ -665,6 +782,11 @@ const styles = StyleSheet.create({
   equipText: {
     color: 'white',
     fontSize: 12,
+  },
+  castInfo: {
+    color: '#FFD700',
+    fontSize: 12,
+    fontWeight: 'bold',
   },
   fishingLine: {
     position: 'absolute',
