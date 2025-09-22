@@ -16,6 +16,8 @@ import { StatusBar } from 'expo-status-bar';
 import MagentoShop from './components/MagentoShop';
 import FishingRodShop from './components/FishingRodShop';
 import CastingMechanism from './components/CastingMechanism';
+import LocationSelector from './components/LocationSelector';
+import { fishingLocations, locationSpecialFish, locationFishTypes } from './components/LocationData';
 
 const { width, height } = Dimensions.get('window');
 
@@ -65,7 +67,11 @@ export default function App() {
   const [showMagentoShop, setShowMagentoShop] = useState(false);
   const [showFishingRodShop, setShowFishingRodShop] = useState(false);
   const [showCasting, setShowCasting] = useState(false);
+  const [showLocationSelector, setShowLocationSelector] = useState(false);
   const [isSoundOn, setIsSoundOn] = useState(true);
+  
+  // Location state
+  const [currentLocation, setCurrentLocation] = useState(fishingLocations[0]);
   
   // Fishing rod state
   const [currentRod, setCurrentRod] = useState(null);
@@ -352,12 +358,13 @@ export default function App() {
     }, timer);
   };
 
-  // Get random fish
+  // Get random fish based on current location
   const getRandomFish = () => {
+    const locationFish = locationFishTypes[currentLocation.id] || fishTypes;
     const random = Math.random();
     let cumulativeRarity = 0;
     
-    for (const fish of fishTypes) {
+    for (const fish of locationFish) {
       const adjustedRarity = fish.rarity + (rodLevel * 0.1) + (baitLevel * 0.05);
       cumulativeRarity += adjustedRarity;
       
@@ -367,6 +374,16 @@ export default function App() {
     }
     
     return null;
+  };
+
+  // Handle location selection
+  const handleLocationSelect = (location) => {
+    setCurrentLocation(location);
+    // Reset fishing state when changing location
+    setIsFishing(false);
+    setIsWaiting(false);
+    setCaughtFish(null);
+    setCastResult(null);
   };
 
   // Start fishing
@@ -403,25 +420,28 @@ export default function App() {
       
       // Check for special fish first
       if (showSpecialFish && Math.random() < 0.3) {
+        const specialFish = locationSpecialFish[currentLocation.id] || specialFish;
         setCaughtFish(specialFish);
-        setScore(prev => prev + specialFish.points);
-        setCoins(prev => prev + specialFish.points * 2);
-        setExp(prev => prev + specialFish.points);
+        const points = Math.round(specialFish.points * currentLocation.rewards.coins);
+        setScore(prev => prev + points);
+        setCoins(prev => prev + points * 2);
+        setExp(prev => prev + Math.round(points * currentLocation.rewards.exp));
         setShowSpecialFish(false);
         playSound('success');
         checkMissions('catch_fish');
-        checkMissions('earn_points', specialFish.points);
-        Alert.alert('ยอดเยี่ยม!', 'คุณจับปลามังกรทองได้!');
+        checkMissions('earn_points', points);
+        Alert.alert('ยอดเยี่ยม!', `คุณจับ${specialFish.name}ได้!`);
       } else {
         const fish = getRandomFish();
         if (fish) {
           setCaughtFish(fish);
-          setScore(prev => prev + fish.points);
-          setCoins(prev => prev + fish.points);
-          setExp(prev => prev + fish.points);
+          const points = Math.round(fish.points * currentLocation.rewards.coins);
+          setScore(prev => prev + points);
+          setCoins(prev => prev + points);
+          setExp(prev => prev + Math.round(points * currentLocation.rewards.exp));
           playSound('success');
           checkMissions('catch_fish');
-          checkMissions('earn_points', fish.points);
+          checkMissions('earn_points', points);
         } else {
           playSound('miss');
         }
@@ -497,7 +517,7 @@ export default function App() {
       <Animated.View style={[styles.water, {
         backgroundColor: waterAnimation.interpolate({
           inputRange: [0, 1],
-          outputRange: ['#4A90E2', '#2E5BBA']
+          outputRange: [currentLocation.background, currentLocation.waterColor]
         })
       }]} />
       
@@ -507,6 +527,13 @@ export default function App() {
         <Text style={styles.infoText}>เหรียญ: {coins}</Text>
         <Text style={styles.infoText}>ระดับ: {level}</Text>
         <Text style={styles.infoText}>EXP: {exp}/{expToNextLevel}</Text>
+      </View>
+      
+      {/* Current Location Info */}
+      <View style={styles.locationInfo}>
+        <Text style={styles.locationName}>{currentLocation.name}</Text>
+        <Text style={styles.locationDescription}>{currentLocation.description}</Text>
+        <Text style={styles.locationDifficulty}>ความยาก: {currentLocation.difficulty}</Text>
       </View>
       
       {/* Equipment Info */}
@@ -544,15 +571,21 @@ export default function App() {
         <View style={styles.caughtFish}>
           <Text style={styles.fishEmoji}>{caughtFish.emoji}</Text>
           <Text style={styles.fishName}>{caughtFish.name}</Text>
-          <Text style={styles.fishPoints}>{caughtFish.points} คะแนน</Text>
+          <Text style={styles.fishPoints}>
+            {Math.round(caughtFish.points * currentLocation.rewards.coins)} คะแนน
+          </Text>
         </View>
       )}
       
       {/* Special Fish */}
       {showSpecialFish && (
         <TouchableOpacity style={styles.specialFish} onPress={startFishing}>
-          <Text style={styles.specialFishEmoji}>{specialFish.emoji}</Text>
-          <Text style={styles.specialFishText}>ปลามังกรทอง!</Text>
+          <Text style={styles.specialFishEmoji}>
+            {locationSpecialFish[currentLocation.id]?.emoji || specialFish.emoji}
+          </Text>
+          <Text style={styles.specialFishText}>
+            {locationSpecialFish[currentLocation.id]?.name || 'ปลามังกรทอง!'}
+          </Text>
           <Text style={styles.specialFishSubtext}>แตะเพื่อจับ!</Text>
         </TouchableOpacity>
       )}
@@ -585,6 +618,10 @@ export default function App() {
         
         <TouchableOpacity style={styles.controlButton} onPress={() => setShowMissions(true)}>
           <Text style={styles.controlButtonText}>📜</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.controlButton} onPress={() => setShowLocationSelector(true)}>
+          <Text style={styles.controlButtonText}>🗺️</Text>
         </TouchableOpacity>
       </View>
       
@@ -706,6 +743,16 @@ export default function App() {
         isFishing={isFishing}
         onStartFishing={startFishing}
       />
+      
+      {/* Location Selector */}
+      <LocationSelector
+        visible={showLocationSelector}
+        onClose={() => setShowLocationSelector(false)}
+        onSelectLocation={handleLocationSelect}
+        currentLocation={currentLocation}
+        playerLevel={level}
+        playerCoins={coins}
+      />
     </View>
   );
 }
@@ -750,6 +797,9 @@ const styles = StyleSheet.create({
   shopButtonText: {
     color: 'white',
     fontWeight: 'bold',
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   water: {
     position: 'absolute',
@@ -762,31 +812,60 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 50,
     left: 20,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    padding: 10,
-    borderRadius: 10,
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    padding: 12,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: 'rgba(255,255,255,0.3)',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 4,
   },
   infoText: {
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   equipmentInfo: {
     position: 'absolute',
     top: 50,
     right: 20,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    padding: 10,
-    borderRadius: 10,
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    padding: 12,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: 'rgba(255,255,255,0.3)',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 4,
   },
   equipText: {
     color: 'white',
     fontSize: 12,
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   castInfo: {
     color: '#FFD700',
     fontSize: 12,
     fontWeight: 'bold',
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   fishingLine: {
     position: 'absolute',
@@ -812,9 +891,19 @@ const styles = StyleSheet.create({
     left: width / 2 - 75,
     width: 150,
     alignItems: 'center',
-    backgroundColor: 'rgba(255,255,255,0.9)',
+    backgroundColor: 'rgba(255,255,255,0.95)',
     padding: 15,
     borderRadius: 15,
+    borderWidth: 2,
+    borderColor: '#4CAF50',
+    shadowColor: '#4CAF50',
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 8,
+    elevation: 8,
   },
   fishEmoji: {
     fontSize: 40,
@@ -823,10 +912,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#333',
+    textShadowColor: '#fff',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   fishPoints: {
     fontSize: 14,
-    color: '#666',
+    color: '#4CAF50',
+    fontWeight: 'bold',
+    textShadowColor: '#fff',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   specialFish: {
     position: 'absolute',
@@ -837,8 +933,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,215,0,0.9)',
     padding: 15,
     borderRadius: 15,
-    borderWidth: 2,
+    borderWidth: 3,
     borderColor: '#FFD700',
+    shadowColor: '#FFD700',
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 10,
+    elevation: 10,
   },
   specialFishEmoji: {
     fontSize: 60,
@@ -847,44 +951,77 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#B8860B',
+    textShadowColor: '#fff',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   specialFishSubtext: {
     fontSize: 14,
     color: '#333',
+    fontWeight: 'bold',
+    textShadowColor: '#fff',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   fishingButton: {
     position: 'absolute',
     bottom: 100,
     left: width / 2 - 75,
     width: 150,
-    height: 50,
+    height: 60,
     backgroundColor: '#FF6B35',
-    borderRadius: 25,
+    borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
+    shadowColor: '#FF6B35',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+    borderWidth: 2,
+    borderColor: '#FF4500',
   },
   buttonText: {
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   controlButtons: {
     position: 'absolute',
     top: 50,
     right: 20,
-    flexDirection: 'row',
+    flexDirection: 'column',
   },
   controlButton: {
-    width: 40,
-    height: 40,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    borderRadius: 20,
+    width: 50,
+    height: 50,
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 10,
+    marginBottom: 10,
+    borderWidth: 2,
+    borderColor: 'rgba(255,255,255,0.3)',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 4,
   },
   controlButtonText: {
     fontSize: 20,
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   modalContainer: {
     flex: 1,
@@ -966,5 +1103,56 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  locationInfo: {
+    position: 'absolute',
+    top: 50,
+    left: width / 2 - 100,
+    width: 200,
+    backgroundColor: 'rgba(0,0,0,0.8)',
+    padding: 12,
+    borderRadius: 15,
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: 'rgba(255,255,255,0.3)',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  locationName: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  locationDescription: {
+    color: '#FFD700',
+    fontSize: 12,
+    textAlign: 'center',
+    marginTop: 2,
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  locationDifficulty: {
+    color: '#FFA500',
+    fontSize: 10,
+    textAlign: 'center',
+    marginTop: 2,
+    fontWeight: 'bold',
+    textShadowColor: '#000',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
 });
