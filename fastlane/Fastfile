@@ -1,0 +1,93 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new release build to the App Store"
+  lane :release do
+    # Increment build number
+    increment_build_number(xcodeproj: "ios/FishingGame.xcodeproj")
+    
+    # Build the app
+    build_app(
+      scheme: "FishingGame",
+      workspace: "ios/FishingGame.xcworkspace",
+      export_method: "app-store",
+      export_options: {
+        method: "app-store",
+        teamID: "YOUR_TEAM_ID", # Replace with your Apple Team ID
+        uploadBitcode: false,
+        uploadSymbols: true,
+        compileBitcode: false
+      }
+    )
+    
+    # Upload to App Store Connect
+    upload_to_app_store(
+      force: true,
+      skip_metadata: false,
+      skip_screenshots: false,
+      submit_for_review: false, # Set to true if you want to submit for review automatically
+      automatic_release: false
+    )
+  end
+
+  desc "Submit app for review"
+  lane :submit do
+    upload_to_app_store(
+      force: true,
+      skip_metadata: false,
+      skip_screenshots: false,
+      submit_for_review: true,
+      automatic_release: false
+    )
+  end
+
+  desc "Upload metadata and screenshots"
+  lane :metadata do
+    upload_to_app_store(
+      force: true,
+      skip_metadata: false,
+      skip_screenshots: false,
+      submit_for_review: false
+    )
+  end
+
+  desc "Build and upload to TestFlight"
+  lane :beta do
+    # Increment build number
+    increment_build_number(xcodeproj: "ios/FishingGame.xcodeproj")
+    
+    # Build the app
+    build_app(
+      scheme: "FishingGame",
+      workspace: "ios/FishingGame.xcworkspace",
+      export_method: "app-store",
+      export_options: {
+        method: "app-store",
+        teamID: "YOUR_TEAM_ID", # Replace with your Apple Team ID
+        uploadBitcode: false,
+        uploadSymbols: true,
+        compileBitcode: false
+      }
+    )
+    
+    # Upload to TestFlight
+    upload_to_testflight(
+      skip_waiting_for_build_processing: true
+    )
+  end
+end
