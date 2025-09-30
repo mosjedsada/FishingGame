@@ -22,29 +22,29 @@ import DonationModal from './components/DonationModal';
 
 const { width, height } = Dimensions.get('window');
 
-// Fish data
+// Fish data - English names
 const fishTypes = [
-  { name: 'ปลาทอง', points: 10, rarity: 0.5, emoji: '🐟', color: '#FFA500' },
-  { name: 'ปลาฉลาม', points: 50, rarity: 0.1, emoji: '🦈', color: '#808080' },
-  { name: 'ปลาไหล', points: 20, rarity: 0.3, emoji: '🐍', color: '#8B4513' },
-  { name: 'ปลาหมึก', points: 30, rarity: 0.2, emoji: '🦑', color: '#800080' },
-  { name: 'ม้าน้ำ', points: 25, rarity: 0.4, emoji: '🐠', color: '#FFA500' },
+  { name: 'Goldfish', points: 10, rarity: 0.5, emoji: '🐟', color: '#FFA500' },
+  { name: 'Shark', points: 50, rarity: 0.1, emoji: '🦈', color: '#808080' },
+  { name: 'Eel', points: 20, rarity: 0.3, emoji: '🐍', color: '#8B4513' },
+  { name: 'Squid', points: 30, rarity: 0.2, emoji: '🦑', color: '#800080' },
+  { name: 'Seahorse', points: 25, rarity: 0.4, emoji: '🐠', color: '#FFA500' },
 ];
 
-const specialFish = { name: 'ปลามังกรทอง', points: 500, rarity: 0.05, emoji: '🐉', color: '#FFD700' };
+const specialFish = { name: 'Golden Dragon Fish', points: 500, rarity: 0.05, emoji: '🐉', color: '#FFD700' };
 
-// Daily missions
+// Daily missions - English
 const missionTypes = [
-  { type: 'catch_fish', target: 5, reward: 100, description: 'จับปลา 5 ตัว' },
-  { type: 'earn_points', target: 100, reward: 150, description: 'ได้คะแนน 100 คะแนน' },
-  { type: 'play_count', target: 10, reward: 80, description: 'เล่น 10 ครั้ง' },
+  { type: 'catch_fish', target: 5, reward: 100, description: 'Catch 5 fish' },
+  { type: 'earn_points', target: 100, reward: 150, description: 'Earn 100 points' },
+  { type: 'play_count', target: 10, reward: 80, description: 'Play 10 times' },
 ];
 
 export default function App() {
   // Game state
   const [score, setScore] = useState(0);
   const [coins, setCoins] = useState(100);
-  const [premiumCoins, setPremiumCoins] = useState(10); // New premium currency
+  const [premiumCoins, setPremiumCoins] = useState(10);
   const [level, setLevel] = useState(1);
   const [exp, setExp] = useState(0);
   const [expToNextLevel, setExpToNextLevel] = useState(100);
@@ -115,19 +115,17 @@ export default function App() {
   // Handle purchase from shop
   const handlePurchase = (item) => {
     if (item.id === 'remove_ads') {
-      // Handle ad removal
       setAdsRemoved(true);
       AsyncStorage.setItem('adsRemoved', 'true');
       Alert.alert(
-        'Success / สำเร็จ', 
-        'Ads have been removed! / ระบบได้ลบโฆษณาออกเรียบร้อยแล้ว!'
+        'Success!', 
+        'Ads have been removed!'
       );
     } else {
-      // Handle coin purchases
       setCoins(prevCoins => prevCoins + item.coins);
       Alert.alert(
-        'Purchase Complete / ซื้อสำเร็จ',
-        `You received ${item.coins} coins! / คุณได้รับ ${item.coins} เหรียญ!`
+        'Purchase Complete',
+        `You received ${item.coins} coins!`
       );
     }
   };
@@ -174,18 +172,6 @@ export default function App() {
     }
   };
 
-  // Load premium status
-  const loadPremiumStatus = async () => {
-    try {
-      const status = await AsyncStorage.getItem('adsRemoved');
-      if (status === 'true') {
-        setAdsRemoved(true);
-      }
-    } catch (error) {
-      console.error('Error loading premium status:', error);
-    }
-  };
-
   // Load fishing rods
   const loadFishingRods = async () => {
     try {
@@ -201,7 +187,7 @@ export default function App() {
         // Initialize with basic rod
         const basicRod = {
           id: 'basic_rod',
-          name: 'เบ็ดพื้นฐาน / Basic Rod',
+          name: 'Basic Rod',
           castingDistance: 50,
           accuracy: 70,
           durability: 100,
@@ -248,11 +234,8 @@ export default function App() {
   // Handle casting
   const handleCast = (result) => {
     setCastResult(result);
-    // Apply rod bonuses to fishing
     if (result.accuracy) {
-      // Increase fish catch rate based on rod accuracy
       const accuracyBonus = result.accuracy ? currentRod.accuracy / 100 : 0;
-      // This will be used in the fishing logic
     }
   };
 
@@ -292,7 +275,7 @@ export default function App() {
           
           if (isCompleted && !mission.isCompleted) {
             setCoins(prev => prev + mission.reward);
-            Alert.alert('ภารกิจสำเร็จ!', `ได้รับ ${mission.reward} เหรียญ`);
+            Alert.alert('Mission Complete!', `You earned ${mission.reward} coins!`);
           }
           
           return {
@@ -348,7 +331,7 @@ export default function App() {
     setTimeout(() => {
       if (!showSpecialFish) {
         setShowSpecialFish(true);
-        Alert.alert('ปลาพิเศษปรากฏตัว!', 'มีปลามังกรทองหายากปรากฏตัว! เร็วเข้า ก่อนที่มันจะว่ายหนีไป!');
+        Alert.alert('Special Fish Appeared!', 'A rare Golden Dragon Fish has appeared! Hurry up before it swims away!');
         playSound('special');
         
         // Hide after 10 seconds
@@ -381,7 +364,6 @@ export default function App() {
   // Handle location selection
   const handleLocationSelect = (location) => {
     setCurrentLocation(location);
-    // Reset fishing state when changing location
     setIsFishing(false);
     setIsWaiting(false);
     setCaughtFish(null);
@@ -391,14 +373,12 @@ export default function App() {
   // Start fishing
   const startFishing = () => {
     if (isFishing) {
-      // Reel in
       setIsFishing(false);
       setIsWaiting(false);
       setCaughtFish(null);
       return;
     }
 
-    // If no cast result, show casting interface
     if (!castResult) {
       setShowCasting(true);
       return;
@@ -412,7 +392,6 @@ export default function App() {
     setCaughtFish(null);
     startHookAnimation();
     
-    // Wait time based on line level and rod accuracy
     const baseWaitTime = Math.max(1000, 3000 - (lineLevel * 500));
     const rodAccuracyBonus = currentRod ? currentRod.accuracy / 100 : 1;
     const waitTime = Math.max(1000, baseWaitTime * rodAccuracyBonus);
@@ -420,7 +399,6 @@ export default function App() {
     setTimeout(() => {
       setIsWaiting(false);
       
-      // Check for special fish first
       if (showSpecialFish && Math.random() < 0.3) {
         const specialFish = locationSpecialFish[currentLocation.id] || specialFish;
         setCaughtFish(specialFish);
@@ -432,7 +410,7 @@ export default function App() {
         playSound('success');
         checkMissions('catch_fish');
         checkMissions('earn_points', points);
-        Alert.alert('ยอดเยี่ยม!', `คุณจับ${specialFish.name}ได้!`);
+        Alert.alert('Excellent!', `You caught ${specialFish.name}!`);
       } else {
         const fish = getRandomFish();
         if (fish) {
@@ -449,12 +427,11 @@ export default function App() {
         }
       }
       
-      // Check level up
       if (exp >= expToNextLevel) {
         setLevel(prev => prev + 1);
         setExp(0);
         setExpToNextLevel(prev => prev + 50);
-        Alert.alert('เลื่อนระดับ!', `ยินดีด้วย! คุณได้เลื่อนเป็นระดับ ${level + 1}`);
+        Alert.alert('Level Up!', `Congratulations! You reached level ${level + 1}!`);
       }
       
       saveGameData();
@@ -511,7 +488,7 @@ export default function App() {
           style={styles.shopButton}
           onPress={() => setShopVisible(true)}
         >
-          <Text style={styles.shopButtonText}>Shop / ร้านค้า</Text>
+          <Text style={styles.shopButtonText}>Shop</Text>
         </TouchableOpacity>
       </View>
       
@@ -525,9 +502,9 @@ export default function App() {
       
       {/* Game Info */}
       <View style={styles.gameInfo}>
-        <Text style={styles.infoText}>คะแนน: {score}</Text>
-        <Text style={styles.infoText}>เหรียญ: {coins}</Text>
-        <Text style={styles.infoText}>ระดับ: {level}</Text>
+        <Text style={styles.infoText}>Score: {score}</Text>
+        <Text style={styles.infoText}>Coins: {coins}</Text>
+        <Text style={styles.infoText}>Level: {level}</Text>
         <Text style={styles.infoText}>EXP: {exp}/{expToNextLevel}</Text>
       </View>
       
@@ -535,17 +512,17 @@ export default function App() {
       <View style={styles.locationInfo}>
         <Text style={styles.locationName}>{currentLocation.name}</Text>
         <Text style={styles.locationDescription}>{currentLocation.description}</Text>
-        <Text style={styles.locationDifficulty}>ความยาก: {currentLocation.difficulty}</Text>
+        <Text style={styles.locationDifficulty}>Difficulty: {currentLocation.difficulty}</Text>
       </View>
       
       {/* Equipment Info */}
       <View style={styles.equipmentInfo}>
-        <Text style={styles.equipText}>เบ็ด: {currentRod?.name || 'No Rod'}</Text>
-        <Text style={styles.equipText}>เหยื่อ: ระดับ {baitLevel}</Text>
-        <Text style={styles.equipText}>สายเบ็ด: ระดับ {lineLevel}</Text>
+        <Text style={styles.equipText}>Rod: {currentRod?.name || 'No Rod'}</Text>
+        <Text style={styles.equipText}>Bait: Level {baitLevel}</Text>
+        <Text style={styles.equipText}>Line: Level {lineLevel}</Text>
         {castResult && (
           <Text style={styles.castInfo}>
-            Cast: {castResult.distance}m / โยน: {castResult.distance} เมตร
+            Cast: {castResult.distance}m
           </Text>
         )}
       </View>
@@ -574,7 +551,7 @@ export default function App() {
           <Text style={styles.fishEmoji}>{caughtFish.emoji}</Text>
           <Text style={styles.fishName}>{caughtFish.name}</Text>
           <Text style={styles.fishPoints}>
-            {Math.round(caughtFish.points * currentLocation.rewards.coins)} คะแนน
+            {Math.round(caughtFish.points * currentLocation.rewards.coins)} points
           </Text>
         </View>
       )}
@@ -586,17 +563,17 @@ export default function App() {
             {locationSpecialFish[currentLocation.id]?.emoji || specialFish.emoji}
           </Text>
           <Text style={styles.specialFishText}>
-            {locationSpecialFish[currentLocation.id]?.name || 'ปลามังกรทอง!'}
+            {locationSpecialFish[currentLocation.id]?.name || 'Golden Dragon Fish!'}
           </Text>
-          <Text style={styles.specialFishSubtext}>แตะเพื่อจับ!</Text>
+          <Text style={styles.specialFishSubtext}>Tap to catch!</Text>
         </TouchableOpacity>
       )}
       
       {/* Fishing Button */}
       <TouchableOpacity style={styles.fishingButton} onPress={startFishing}>
         <Text style={styles.buttonText}>
-          {isFishing ? (isWaiting ? 'รอปลา...' : 'ดึงเบ็ด!') : 
-           castResult ? 'ทอดเบ็ด!' : 'โยนเบ็ด!'}
+          {isFishing ? (isWaiting ? 'Waiting for fish...' : 'Reel in!') : 
+           castResult ? 'Cast line!' : 'Cast!'}
         </Text>
       </TouchableOpacity>
       
@@ -635,51 +612,51 @@ export default function App() {
       <Modal visible={showShop} animationType="slide" transparent>
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>ร้านค้า</Text>
+            <Text style={styles.modalTitle}>Shop</Text>
             
             <ScrollView>
               <View style={styles.shopItem}>
-                <Text style={styles.shopItemText}>เบ็ด ระดับ {rodLevel}</Text>
+                <Text style={styles.shopItemText}>Rod Level {rodLevel}</Text>
                 <TouchableOpacity 
                   style={[styles.upgradeButton, rodLevel >= 5 && styles.disabledButton]}
                   onPress={() => upgradeItem('rod')}
                   disabled={rodLevel >= 5 || coins < upgradeCosts.rod[rodLevel - 1]}
                 >
                   <Text style={styles.upgradeButtonText}>
-                    {rodLevel >= 5 ? 'สูงสุด' : `${upgradeCosts.rod[rodLevel - 1]} เหรียญ`}
+                    {rodLevel >= 5 ? 'Max Level' : `${upgradeCosts.rod[rodLevel - 1]} coins`}
                   </Text>
                 </TouchableOpacity>
               </View>
               
               <View style={styles.shopItem}>
-                <Text style={styles.shopItemText}>เหยื่อ ระดับ {baitLevel}</Text>
+                <Text style={styles.shopItemText}>Bait Level {baitLevel}</Text>
                 <TouchableOpacity 
                   style={[styles.upgradeButton, baitLevel >= 5 && styles.disabledButton]}
                   onPress={() => upgradeItem('bait')}
                   disabled={baitLevel >= 5 || coins < upgradeCosts.bait[baitLevel - 1]}
                 >
                   <Text style={styles.upgradeButtonText}>
-                    {baitLevel >= 5 ? 'สูงสุด' : `${upgradeCosts.bait[baitLevel - 1]} เหรียญ`}
+                    {baitLevel >= 5 ? 'Max Level' : `${upgradeCosts.bait[baitLevel - 1]} coins`}
                   </Text>
                 </TouchableOpacity>
               </View>
               
               <View style={styles.shopItem}>
-                <Text style={styles.shopItemText}>สายเบ็ด ระดับ {lineLevel}</Text>
+                <Text style={styles.shopItemText}>Line Level {lineLevel}</Text>
                 <TouchableOpacity 
                   style={[styles.upgradeButton, lineLevel >= 5 && styles.disabledButton]}
                   onPress={() => upgradeItem('line')}
                   disabled={lineLevel >= 5 || coins < upgradeCosts.line[lineLevel - 1]}
                 >
                   <Text style={styles.upgradeButtonText}>
-                    {lineLevel >= 5 ? 'สูงสุด' : `${upgradeCosts.line[lineLevel - 1]} เหรียญ`}
+                    {lineLevel >= 5 ? 'Max Level' : `${upgradeCosts.line[lineLevel - 1]} coins`}
                   </Text>
                 </TouchableOpacity>
               </View>
             </ScrollView>
             
             <TouchableOpacity style={styles.closeButton} onPress={() => setShowShop(false)}>
-              <Text style={styles.closeButtonText}>ปิด</Text>
+              <Text style={styles.closeButtonText}>Close</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -689,7 +666,7 @@ export default function App() {
       <Modal visible={showMissions} animationType="slide" transparent>
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>ภารกิจประจำวัน</Text>
+            <Text style={styles.modalTitle}>Daily Missions</Text>
             
             <ScrollView>
               {dailyMissions.map((mission) => (
@@ -699,17 +676,17 @@ export default function App() {
                     {mission.progress}/{mission.target}
                   </Text>
                   <Text style={styles.missionReward}>
-                    รางวัล: {mission.reward} เหรียญ
+                    Reward: {mission.reward} coins
                   </Text>
                   {mission.isCompleted && (
-                    <Text style={styles.completedText}>✅ สำเร็จ</Text>
+                    <Text style={styles.completedText}>✅ Completed</Text>
                   )}
                 </View>
               ))}
             </ScrollView>
             
             <TouchableOpacity style={styles.closeButton} onPress={() => setShowMissions(false)}>
-              <Text style={styles.closeButtonText}>ปิด</Text>
+              <Text style={styles.closeButtonText}>Close</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -722,7 +699,6 @@ export default function App() {
         playerLevel={level}
         gameCoins={coins}
         onPurchase={(product) => {
-          // Handle successful purchase - could give in-game bonuses
           console.log('Purchased:', product.name);
           Alert.alert(
             'Purchase Successful!',
