@@ -18,6 +18,7 @@ import FishingRodShop from './components/FishingRodShop';
 import CastingMechanism from './components/CastingMechanism';
 import LocationSelector from './components/LocationSelector';
 import { fishingLocations, locationSpecialFish, locationFishTypes } from './components/LocationData';
+import DonationModal from './components/DonationModal';
 
 const { width, height } = Dimensions.get('window');
 
@@ -68,6 +69,7 @@ export default function App() {
   const [showFishingRodShop, setShowFishingRodShop] = useState(false);
   const [showCasting, setShowCasting] = useState(false);
   const [showLocationSelector, setShowLocationSelector] = useState(false);
+  const [showDonation, setShowDonation] = useState(false);
   const [isSoundOn, setIsSoundOn] = useState(true);
   
   // Location state
@@ -623,6 +625,10 @@ export default function App() {
         <TouchableOpacity style={styles.controlButton} onPress={() => setShowLocationSelector(true)}>
           <Text style={styles.controlButtonText}>🗺️</Text>
         </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.controlButton} onPress={() => setShowDonation(true)}>
+          <Text style={styles.controlButtonText}>💝</Text>
+        </TouchableOpacity>
       </View>
       
       {/* Shop Modal */}
@@ -752,6 +758,12 @@ export default function App() {
         currentLocation={currentLocation}
         playerLevel={level}
         playerCoins={coins}
+      />
+      
+      {/* Donation Modal */}
+      <DonationModal
+        visible={showDonation}
+        onClose={() => setShowDonation(false)}
       />
     </View>
   );
