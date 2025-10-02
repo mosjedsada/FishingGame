@@ -26,6 +26,7 @@ import CastingMechanism from './components/CastingMechanism';
 import MagentoShop from './components/MagentoShop';
 import FishingRodShop from './components/FishingRodShop';
 import DonationModal from './components/DonationModal';
+import MissionsModal from './components/MissionsModal';
 
 // Services
 import SoundService from './src/services/SoundService';
@@ -383,6 +384,19 @@ export default function App() {
         onDonate={() => {
           Alert.alert('Thank You! 💝', 'Your support means a lot!');
           setShowDonation(false);
+        }}
+      />
+
+      <MissionsModal
+        visible={showMissions}
+        onClose={() => setShowMissions(false)}
+        missions={missions}
+        onClaimReward={(mission) => {
+          updateCoins(mission.reward);
+          Alert.alert('Reward Claimed!', `You received ${mission.reward} coins!`);
+          if (isSoundOn) {
+            SoundService.playSuccess();
+          }
         }}
       />
     </SafeAreaView>
